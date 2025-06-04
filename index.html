@@ -4,145 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bodoque - Sites Rápidos e Acessíveis</title>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Montserrat', 'Open Sans', sans-serif;
-  line-height: 1.6;
-  color: #3A4C5A;
-  background-color: #ffffff;
-}
+    body {
+      font-family: 'Montserrat', 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #3A4C5A;
+      background-color: #ffffff;
+    }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
 
-.hero {
-  padding: 150px 0 80px;
-  background-color: #ffffff;
-  color: #2D6CDF;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 20px;
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-
-.cta-button {
-  background-color: #36B37E;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cta-button:hover {
-  background-color: #2D9D6B;
-}
-
-.services,
-.portfolio,
-.features,
-.gallery {
-  padding: 80px 0;
-  background-color: #ffffff;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 60px;
-  color: #2D6CDF;
-}
-
-.service-card,
-.portfolio-item,
-.feature-card {
-  background-color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.tag {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #2D6CDF;
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #36B37E;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #2D9D6B;
-}
-
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #2D9D6B;
+    .logo {
+      height: 50px;
     }
 
     .hero {
       padding: 150px 0 80px;
-      background-color: #2D6CDF;
-      color: white;
+      background-color: #ffffff;
+      color: #2D6CDF;
       text-align: center;
     }
 
@@ -177,7 +79,10 @@ header {
       background-color: #2D9D6B;
     }
 
-    .services {
+    .services,
+    .portfolio,
+    .features,
+    .gallery {
       padding: 80px 0;
       background-color: #ffffff;
     }
@@ -189,14 +94,19 @@ header {
       color: #2D6CDF;
     }
 
-    .services-grid {
+    .services-grid,
+    .portfolio-grid,
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
 
-    .service-card {
-      background-color: #F5F7FA;
+    .service-card,
+    .portfolio-item,
+    .feature-card {
+      background-color: #ffffff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       padding: 30px;
       border-radius: 10px;
       text-align: center;
@@ -219,28 +129,13 @@ header {
       margin: 15px 0;
     }
 
-    .portfolio {
-      padding: 80px 0;
-      background-color: #F5F7FA;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap: 40px;
-    }
-
-    .portfolio-item {
-      background-color: #ffffff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .portfolio-image {
+    .portfolio-image,
+    .gallery-grid img {
       width: 100%;
       height: auto;
+      border-radius: 10px;
       display: block;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .portfolio-content {
@@ -255,31 +150,13 @@ header {
 
     .tag {
       display: inline-block;
-      background-color: #E9F5FF;
+      background-color: #ffffff;
       color: #2D6CDF;
       padding: 5px 10px;
       border-radius: 3px;
       font-size: 12px;
       margin-right: 5px;
       margin-bottom: 5px;
-    }
-
-    .gallery {
-      padding: 80px 0;
-      background-color: #ffffff;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .cta-section {
@@ -294,6 +171,30 @@ header {
       color: white;
       padding: 40px 0;
       text-align: center;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #36B37E;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #2D9D6B;
     }
 
     @media (max-width: 768px) {
@@ -392,20 +293,18 @@ header {
     </div>
   </section>
 
-  <!-- Galeria de Imagens -->
-<section class="gallery">
-  <div class="container">
-    <h2 class="section-title">Diferenciais da Bodoque</h2>
-    <div class="gallery-grid">
-      <img src="design_responsivo_feed.png" alt="Design Responsivo">
-      <img src="pacote_completo_feed.png" alt="Pacote Completo">
-      <img src="prazo_rapido_feed.png" alt="Prazo Rápido">
-      <img src="preco_competitivo_feed.png" alt="Preço Competitivo">
-      <img src="suporte_tecnico_feed.png" alt="Suporte Técnico">
+  <section class="gallery">
+    <div class="container">
+      <h2 class="section-title">Diferenciais da Bodoque</h2>
+      <div class="gallery-grid">
+        <img src="design_responsivo_feed.png" alt="Design Responsivo">
+        <img src="pacote_completo_feed.png" alt="Pacote Completo">
+        <img src="prazo_rapido_feed.png" alt="Prazo Rápido">
+        <img src="preco_competitivo_feed.png" alt="Preço Competitivo">
+        <img src="suporte_tecnico_feed.png" alt="Suporte Técnico">
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section class="cta-section">
     <div class="container">
@@ -420,5 +319,6 @@ header {
       <p>© 2025 Bodoque Digital. Todos os direitos reservados.</p>
     </div>
   </footer>
+
 </body>
 </html>
