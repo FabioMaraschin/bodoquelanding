@@ -1,458 +1,352 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodoque - Sites Rápidos e Acessíveis</title>
-    <style>
-        /* Estilos gerais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: #3A4C5A;
-            background-color: #F5F7FA;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Cabeçalho */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            height: 60px;
-        }
-        
-        .whatsapp-btn-header {
-            background-color: #36B37E;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .whatsapp-btn-header:hover {
-            background-color: #2D9D6B;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 80px;
-            background-color: #2D6CDF;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        .cta-button {
-            background-color: #36B37E;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .cta-button:hover {
-            background-color: #2D9D6B;
-        }
-        
-        /* Serviços */
-        .services {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 60px;
-            color: #2D6CDF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: #F5F7FA;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-card h3 {
-            margin: 20px 0;
-            color: #2D6CDF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-        
-        .service-icon {
-            font-size: 40px;
-            color: #36B37E;
-        }
-        
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #36B37E;
-            margin: 15px 0;
-        }
-        
-        /* Portfólio */
-        .portfolio {
-            padding: 80px 0;
-            background-color: #F5F7FA;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-        }
-        
-        .portfolio-item {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .portfolio-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .portfolio-content {
-            padding: 20px;
-        }
-        
-        .portfolio-content h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #2D6CDF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-        
-        .portfolio-content p {
-            margin-bottom: 20px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        .tag {
-            display: inline-block;
-            background-color: #E9F5FF;
-            color: #2D6CDF;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 12px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        
-        /* Diferenciais */
-        .features {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            color: #36B37E;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #2D6CDF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background-color: #2D6CDF;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-        }
-        
-        .cta-section p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        /* Rodapé */
-        footer {
-            background-color: #3A4C5A;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content p {
-            margin-bottom: 20px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Botão flutuante de WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #36B37E;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #2D9D6B;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bodoque - Sites Rápidos e Acessíveis</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #3A4C5A;
+      background-color: #F5F7FA;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #36B37E;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #2D9D6B;
+    }
+
+    .hero {
+      padding: 150px 0 80px;
+      background-color: #2D6CDF;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-button {
+      background-color: #36B37E;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta-button:hover {
+      background-color: #2D9D6B;
+    }
+
+    .services {
+      padding: 80px 0;
+      background-color: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+      color: #2D6CDF;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: #F5F7FA;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      margin: 20px 0;
+      color: #2D6CDF;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #36B37E;
+      margin: 15px 0;
+    }
+
+    .portfolio {
+      padding: 80px 0;
+      background-color: #F5F7FA;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 40px;
+    }
+
+    .portfolio-item {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .portfolio-content {
+      padding: 20px;
+    }
+
+    .portfolio-content h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #2D6CDF;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #E9F5FF;
+      color: #2D6CDF;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    .gallery {
+      padding: 80px 0;
+      background-color: #ffffff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .cta-section {
+      padding: 80px 0;
+      background-color: #2D6CDF;
+      color: white;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #3A4C5A;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Botão flutuante de WhatsApp -->
-    <a href="https://wa.me/5553981128441?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Bodoque." class="whatsapp-float" target="_blank">
-        💬
-    </a>
-    
-    <!-- Cabeçalho -->
-    <header style="background:white;padding:20px 40px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,0.05);">
-        <img src="bodoque_logo_concept.png" alt="Bodoque Digital" style="height:50px;">
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Sites profissionais em tempo recorde</h1>
-            <p>Desenvolvemos seu site com preço justo e entrega rápida, utilizando tecnologia avançada para impulsionar seu negócio.</p>
-            <a href="https://wa.me/5553981128441?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20site." class="cta-button" target="_blank">
-                💬 Solicitar orçamento
-            </a>
+
+  <a href="https://wa.me/5553981128441" class="whatsapp-float" target="_blank">💬</a>
+
+  <header>
+    <img src="bodoque_logo_concept.png" alt="Bodoque Digital" class="logo">
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Sites profissionais em tempo recorde</h1>
+      <p>Desenvolvemos seu site com preço justo e entrega rápida, utilizando tecnologia avançada para impulsionar seu negócio.</p>
+      <a href="https://wa.me/5553981128441" class="cta-button" target="_blank">💬 Solicitar orçamento</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Landing Pages</h3>
+          <p>Páginas de conversão rápidas e eficazes.</p>
+          <div class="price">A partir de R$ 800</div>
         </div>
-    </section>
-    
-    <!-- Serviços -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas únicas de alta conversão, ideais para campanhas e lançamentos.</p>
-                    <div class="price">A partir de R$ 800</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Sites Institucionais</h3>
-                    <p>Apresente sua empresa de forma profissional e conquiste a confiança dos clientes.</p>
-                    <div class="price">A partir de R$ 1.500</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛒</div>
-                    <h3>E-commerce</h3>
-                    <p>Venda seus produtos online com uma loja virtual completa e fácil de gerenciar.</p>
-                    <div class="price">A partir de R$ 2.500</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Blogs</h3>
-                    <p>Compartilhe conteúdo relevante e atraia mais visitantes com um blog otimizado.</p>
-                    <div class="price">A partir de R$ 1.200</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Portfólios</h3>
-                    <p>Mostre seu trabalho de forma impactante com um portfólio digital profissional.</p>
-                    <div class="price">A partir de R$ 1.000</div>
-                </div>
+        <div class="service-card">
+          <h3>Sites Institucionais</h3>
+          <p>Presença profissional online para sua empresa.</p>
+          <div class="price">A partir de R$ 1.500</div>
+        </div>
+        <div class="service-card">
+          <h3>E-commerce</h3>
+          <p>Lojas online práticas e intuitivas.</p>
+          <div class="price">A partir de R$ 2.500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <div class="container">
+      <h2 class="section-title">Nosso Portfólio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <a href="https://menatjoias.com.br" target="_blank"><img src="menatjoias.webp" alt="Menat Joias" class="portfolio-image"></a>
+          <div class="portfolio-content">
+            <h3>Menat Joias</h3>
+            <p>E-commerce de joias com design elegante.</p>
+            <div class="tags">
+              <span class="tag">E-commerce</span>
             </div>
-        </div>
-    </section>
-    
-<!-- Portfólio -->
-<section class="portfolio">
-  <div class="container">
-    <h2 class="section-title">Nosso Portfólio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <a href="https://menatjoias.com.br" target="_blank"><img src="menatjoias.webp" alt="Menat Joias" class="portfolio-image"></a>
-        <div class="portfolio-content">
-          <h3>Menat Joias</h3>
-          <p>E-commerce de joias com design elegante e experiência de compra simplificada.</p>
-          <div class="tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">Design Premium</span>
-            <span class="tag">Responsivo</span>
           </div>
         </div>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="https://venusatomica.com" target="_blank"><img src="lovestyle.webp" alt="Vênus Atômica" class="portfolio-image"></a>
-        <div class="portfolio-content">
-          <h3>Vênus Atômica</h3>
-          <p>Loja de moda inclusiva com forte identidade visual e navegação intuitiva.</p>
-          <div class="tags">
-            <span class="tag">Moda</span>
-            <span class="tag">Inclusiva</span>
-            <span class="tag">E-commerce</span>
+        <div class="portfolio-item">
+          <a href="https://venusatomica.com" target="_blank"><img src="lovestyle.webp" alt="Vênus Atômica" class="portfolio-image"></a>
+          <div class="portfolio-content">
+            <h3>Vênus Atômica</h3>
+            <p>Moda inclusiva com forte identidade visual.</p>
+            <div class="tags">
+              <span class="tag">Moda</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="https://www.lovestyle.com.br" target="_blank"><img src="venusatomica.webp" alt="Lovestyle" class="portfolio-image"></a>
-        <div class="portfolio-content">
-          <h3>Lovestyle</h3>
-          <p>Marca streetwear sem gênero com identidade forte e site responsivo pensado para conversão.</p>
-          <div class="tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">Streetwear</span>
-            <span class="tag">Sem Gênero</span>
+        <div class="portfolio-item">
+          <a href="https://www.lovestyle.com.br" target="_blank"><img src="venusatomica.webp" alt="Lovestyle" class="portfolio-image"></a>
+          <div class="portfolio-content">
+            <h3>Lovestyle</h3>
+            <p>Marca streetwear sem gênero.</p>
+            <div class="tags">
+              <span class="tag">Streetwear</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Pronto para impulsionar seu negócio?</h2>
-            <p>Entre em contato agora mesmo e solicite um orçamento sem compromisso.</p>
-            <a href="https://wa.me/5553981128441?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20site." class="cta-button" target="_blank">
-                💬 Falar com um especialista
-            </a>
-        </div>
-    </section>
-    
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2025 Bodoque Digital. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- Galeria de Imagens -->
+  <section class="gallery">
+    <div class="container">
+      <h2 class="section-title">Diferenciais da Bodoque</h2>
+      <div class="gallery-grid">
+        <img src="design_responsivo_feed.png" alt="Design Responsivo">
+        <img src="pacote_completo_feed.png" alt="Pacote Completo">
+        <img src="prazo_rapido_feed.png" alt="Prazo Rápido">
+        <img src="preco_competitivo_feed.png" alt="Preço Competitivo">
+        <img src="preco_real_feed.webp" alt="Preço Real">
+        <img src="suporte_tecnico_feed.png" alt="Suporte Técnico">
+        <img src="post_marketing_whatsapp.webp" alt="Marketing WhatsApp">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pronto para impulsionar seu negócio?</h2>
+      <p>Entre em contato agora mesmo e solicite um orçamento sem compromisso.</p>
+      <a href="https://wa.me/5553981128441" class="cta-button" target="_blank">💬 Falar com um especialista</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Bodoque Digital. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
